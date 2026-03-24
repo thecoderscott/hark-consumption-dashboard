@@ -1,0 +1,62 @@
+:root {
+  /* Brand Palette */
+  --color-brand-primary-200: #4e515b;
+  --color-brand-primary-400: #2f333e;
+  --color-brand-primary-600: #252830;
+  --color-brand-primary-800: #1f2024;
+
+  --color-brand-secondary-100: #bd9783;
+  --color-brand-secondary-300: #de8a5c;
+  --color-brand-secondary-500: #ca4a05;
+  --color-brand-secondary-700: #793816;
+  --color-brand-secondary-900: #4f250d;
+
+  --color-brand-inverted-200: #b4b8c9;
+  --color-brand-inverted-400: #7d818f;
+  --color-brand-inverted-600: #5f626f;
+
+  --color-status-error: #ed4337;
+
+  --color-ant-accent: var(--color-brand-secondary-500);
+
+  /* Globals */
+  --color-main-bg: var(--color-brand-primary-800);
+  --color-main-surface-1: var(--color-brand-primary-600);
+  --color-main-surface-2: var(--color-brand-primary-400);
+  --color-main-border: var(--color-brand-primary-200);
+  --color-main-text: var(--color-brand-inverted-200);
+  --color-main-text-muted: var(--color-brand-inverted-600);
+
+  /* Components :: Chart */
+  --color-chart-accent-300: var(--color-brand-secondary-300);
+  --color-chart-accent-500: var(--color-brand-secondary-500);
+  --color-chart-accent-700: var(--color-brand-secondary-700);
+
+  --color-chart-tooltip-bg: var(--color-brand-primary-600);
+  --color-chart-tooltip-border: var(--color-brand-primary-200);
+
+  --color-chart-scrollbar-bg: var(--color-brand-primary-400);
+  --color-chart-scrollbar-border: var(--color-main-border);
+  --color-chart-scrollbar-track-bg: var(--color-brand-primary-800);
+  --color-chart-scrollbar-track-border: var(--color-brand-primary-400);
+
+  --color-chart-gridline: var(--color-brand-primary-400);
+  --color-chart-button-bg: var(--color-brand-primary-400);
+
+  --color-chart-temp: var(--color-brand-primary-400);
+  --color-chart-anomaly: var(--color-status-error);
+  --color-chart-consumption: var(--color-brand-secondary-700);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-main-bg);
+  height: 100vh;
+}
