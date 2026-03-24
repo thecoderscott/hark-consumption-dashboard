@@ -2,7 +2,7 @@
 
 ## Project context
 
-This is a full-stack monorepo consisting of a Next.js 15 frontend and a C# .NET 8 Hot Chocolate GraphQL backend. Both projects live under the same git root. Read the structure before making assumptions about where files live.
+This is a full-stack monorepo consisting of a Next.js 16 frontend and a C# .NET 8 Hot Chocolate GraphQL backend. Both projects live under the same git root. Read the structure before making assumptions about where files live.
 
 ## Next.js
 
