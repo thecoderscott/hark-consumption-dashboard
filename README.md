@@ -4,6 +4,8 @@ Hark engineering tech test - an energy manager dashboard for cross-referencing h
 
 A live production build is available at **[https://hark.coderscott.dev](https://hark.coderscott.dev)**.
 
+This is hosted on my server at home and runs through a cloudflare tunnel alongside the rest of my infrastructure.
+
 ---
 
 ## Some context
