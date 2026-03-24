@@ -6,15 +6,33 @@ A live production build is available at **[https://hark.coderscott.dev](https://
 
 ---
 
+## Some context
+
+Typically, when I perform these tech tests, I aim for the most simple solution to prove that I can write code to the level I say I can. It's more about the process and thought that goes into it rather than whether I went OTT perfecting every single element.
+
+For this test, it is a little different as I used to work at Hark. Due to that, I have gone a bit ✨extra ✨with this repo, really attempting to showcase exactly how I think, show what I have learnt over the last few years, and how I have levelled up as an engineer.
+
+TL;DR: Hark knows that I can write code. This monorepo is more of a "here's what I can do now" kind of thing.
+
+Also, just a little heads up - This straight up does not look good on mobile. Not because I forgot, but because I don't think Hark builds for mobile - unless my memory is deceiving me...
+
+---
+
 ## A note on AI-assisted development
 
 This project was built with Claude as a development partner, which I want to be upfront about rather than obscure.
 
-I used Claude to scaffold both the frontend and backend, then reviewed, validated, and iterated on the output to get to the finished result. The frontend is my stronger suit - I work in Next.js and TypeScript day-to-day, so the majority of the frontend work was directed by me with Claude accelerating the implementation. The backend is less familiar territory; C# and .NET aren't part of my day-to-day stack, but I used Claude to build it out and made sure I understood every decision made - the data loading strategy, why Hot Chocolate was chosen, how dependency injection works, why the DataStore is a singleton, and so on. I can speak to all of it.
+I used Claude to scaffold both the frontend and backend, then reviewed, validated, and iterated on the output to get to the finished result. This was a combination of using Claude's "plan mode", as well as me manually writing sections.
 
-I think this reflects how I actually work. AI tooling is part of the modern development workflow, and I'd rather demonstrate that I can use it effectively and critically than pretend I didn't. The goal wasn't to have Claude write a project I can't explain - it was to ship something solid in a reasonable timeframe while genuinely understanding what's under the hood.
+The frontend is my stronger suit - I work in React/NextJS and TypeScript day-to-day, so the majority of the frontend work was directed by me with Claude accelerating the implementation and helping my vision come to life.
+
+The backend is less familiar territory; C# and .NET aren't part of my day-to-day stack, but I used Claude to build it out and made sure I understood every decision made - the data loading strategy, why Hot Chocolate was chosen, how dependency injection works, why the DataStore is a singleton, and so on. I like to learn this way, it gives me context to look at, try to understand and then state what I think is happening for Claude (or any other agent) to tell me whether I am right or wrong.
+
+I think this reflects how I actually work in the modern age. AI tooling is part of the modern development workflow, and I'd rather demonstrate that I can use it effectively and critically than pretend I didn't. The goal wasn't to have Claude write a project I can't explain - it was to ship something solid in a reasonable timeframe while genuinely understanding, or learning, what's under the hood.
 
 It's also worth noting that I chose Claude specifically because Hark use it internally - it felt like the right tool for the job.
+
+I spent a fair bit of time working on this, much more than I typically would for a tech test - around 4 hours total. Most of that time was asking questions about the backend implementation to ensure I understood what it was doing and why, and perfecting the frontend visuals.
 
 ---
 
@@ -22,7 +40,7 @@ It's also worth noting that I chose Claude specifically because Hark use it inte
 
 | Technology | Why                                                                                                                                                                                                    |
 |---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Next.js 15** | React framework with server components and server actions - clean separation between server-side data fetching and client-side interactivity                                                           |
+| **Next.js 16** | React framework with server components and server actions - clean separation between server-side data fetching and client-side interactivity                                                           |
 | **C# / .NET 8** | Specified in the tech test as Hark's backend stack                                                                                                                                                     |
 | **Hot Chocolate** | .NET GraphQL server library - implements the GraphQL spec so you don't have to. GraphQL was specified in the tech test as part of Hark's stack                                                         |
 | **CsvHelper** | Handles CSV parsing edge cases (BOMs, quoted fields, type mapping) without rolling a custom parser                                                                                                     |
@@ -49,7 +67,7 @@ It's also worth noting that I chose Claude specifically because Hark use it inte
 
 ### Requirements
 
-- Node.js 18+
+- Node.js 20+
 - .NET 8 SDK
 
 ### Frontend
@@ -78,6 +96,25 @@ cd backend
 dotnet test
 ```
 
+### Frontend unit tests (Jest)
+
+```bash
+cd frontend
+npm test
+```
+
+### Frontend E2E tests (Cypress)
+
+Requires both the frontend and backend dev servers to be running first.
+
+```bash
+# Interactive mode - opens the Cypress UI
+npm run cypress:open
+
+# Headless mode - runs in the terminal
+npm run cypress:run
+```
+
 ---
 
 ## Project structure
@@ -88,7 +125,7 @@ consumption-dashboard/
 │   ├── HalfHourlyEnergyData.csv
 │   ├── HalfHourlyEnergyDataAnomalies.csv
 │   └── Weather.csv
-├── frontend/                    - Next.js 15 app
+├── frontend/                    - Next.js 16 app
 │   └── src/
 │       ├── app/                 - pages, layout, server actions
 │       ├── components/          - UI components
